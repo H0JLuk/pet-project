@@ -1,0 +1,24 @@
+{
+  "semi": true,
+  "printWidth": 120,
+  "singleQuote": true,
+  "tabWidth": 2,
+  "trailingComma": "all",
+  "jsxSingleQuote": true,
+  "bracketSpacing": true,
+  "arrowParens": "avoid",
+  "importOrder": [
+    "^(react|next)",
+    "<THIRD_PARTY_MODULES>",
+
+    "^@/app",
+    "^@/processes",
+    "^@/pages",
+    "^@/widgets",
+    "^@/features",
+    "^@/entities",
+    "^@/shared"
+  ],
+  "importOrderSeparation": true,
+  "importOrderSortSpecifiers": true
+}
