@@ -1,9 +1,6 @@
-// in case you run into any typescript error when configuring `devServer`
 import path from 'path';
-import 'webpack-dev-server';
 
-import { buildWebpackConfig } from './config/build/buildWebpackConfig';
-import { BuildEnv, BuildPaths } from './config/build/types/config';
+import { BuildEnv, BuildPaths, buildWebpackConfig } from './src/shared/config/build';
 
 const paths: BuildPaths = {
   build: path.resolve(__dirname, 'dist'),
@@ -13,7 +10,7 @@ const paths: BuildPaths = {
 };
 
 export default (env: BuildEnv) => {
-  const mode = env.mode;
+  const { mode } = env;
   const isDev = mode === 'development';
   const port = +env.PORT || 3000;
 

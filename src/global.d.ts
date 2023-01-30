@@ -3,5 +3,5 @@ declare module '*.scss' {
     [className: string]: string;
   }
   const classNames: ClassNames;
-  export = classNames;
+  export default classNames; // FIXME:
 }

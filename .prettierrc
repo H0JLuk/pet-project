@@ -17,7 +17,8 @@
     "^@/widgets",
     "^@/features",
     "^@/entities",
-    "^@/shared"
+    "^@/shared",
+    "^\\.(\\.)?/\\w+"
   ],
   "importOrderSeparation": true,
   "importOrderSortSpecifiers": true

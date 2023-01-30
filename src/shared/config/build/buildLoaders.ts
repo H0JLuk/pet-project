@@ -1,9 +1,9 @@
-import MiniCssExtractPlugin from 'mini-css-extract-plugin'
-import { RuleSetRule } from 'webpack'
-import { BuildOptions } from './types/config'
+import MiniCssExtractPlugin from 'mini-css-extract-plugin';
+import { RuleSetRule } from 'webpack';
+
+import { BuildOptions } from './types/config';
 
 export function buildLoaders({ isDev }: BuildOptions): RuleSetRule[] {
-
   // если не юзаем ts - нужен babel-loader
   const typescriptLoader: RuleSetRule = {
     test: /\.tsx?$/,
@@ -27,11 +27,7 @@ export function buildLoaders({ isDev }: BuildOptions): RuleSetRule[] {
       },
       'sass-loader',
     ],
-
   };
 
-  return [
-    typescriptLoader,
-    sassLoader,
-  ];
+  return [typescriptLoader, sassLoader];
 }
