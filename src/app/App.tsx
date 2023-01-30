@@ -1,19 +1,18 @@
-import { Suspense } from 'react';
-import { Route, Routes } from 'react-router-dom';
+import { Navbar } from '@/widgets/Navbar';
 
-import { AboutPage } from '@/pages/AboutPage';
-import { MainPage } from '@/pages/MainPage';
+import { useTheme } from '@/shared/config/providers/ThemeProvider';
+import { classNames } from '@/shared/lib/classNames';
 
+import { AppRouter } from './providers/router';
 import './styles/index.scss';
 
 function App() {
+  const { theme } = useTheme();
   return (
-    <Suspense fallback={<p>Loading...</p>}>
-      <Routes>
-        <Route path='/' element={<MainPage />} />
-        <Route path='/help-me-pls' element={<AboutPage />} />
-      </Routes>
-    </Suspense>
+    <div className={classNames('app', {}, [theme])}>
+      <Navbar className='чьлен' />
+      <AppRouter />
+    </div>
   );
 }
 
