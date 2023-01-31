@@ -10,7 +10,6 @@
   "importOrder": [
     "^(react|next)",
     "<THIRD_PARTY_MODULES>",
-
     "^@/shared",
     "^@/app",
     "^@/processes",

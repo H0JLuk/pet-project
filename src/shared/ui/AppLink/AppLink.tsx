@@ -22,7 +22,7 @@ export const AppLink = ({
   ...linkProps
 }: PropsWithChildren<AppLinkProps>) => {
   return (
-    <Link {...linkProps} className={classNames(cls.appLink, {}, [className, cls[theme]])}>
+    <Link {...linkProps} className={classNames('', {}, [className, cls[theme]])}>
       {children}
     </Link>
   );

@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 
 import { AppRoutes } from '@/shared/config/routeConfig';
 import { classNames } from '@/shared/lib/classNames';
@@ -11,6 +11,8 @@ export type NavbarProps = {
 };
 
 export const Navbar = ({ className }: NavbarProps) => {
+  const { t } = useTranslation('translation');
+
   return (
     <div className={classNames(cls.navbar, {}, [className])}>
       <div className={cls.links}>
@@ -18,7 +20,7 @@ export const Navbar = ({ className }: NavbarProps) => {
           Главная
         </AppLink>
         <AppLink to={AppRoutes.ABOUT} theme={AppLinkTheme.SECONDARY}>
-          О попи
+          Пися попа
         </AppLink>
       </div>
     </div>

@@ -1,0 +1,13 @@
+{
+  "extends": [
+    "stylelint-config-recommended",
+    "stylelint-prettier/recommended",
+    "stylelint-config-standard-scss",
+    "stylelint-config-prettier-scss",
+    "stylelint-prettier"
+  ],
+  "rules": {
+    "color-no-invalid-hex": true,
+    "selector-class-pattern": null
+  }
+}
