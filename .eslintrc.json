@@ -1,7 +1,8 @@
 {
   "env": {
     "browser": true,
-    "es2021": true
+    "es2021": true,
+    "jest": true
   },
   "extends": [
     "eslint:recommended",
@@ -71,7 +72,8 @@
         "caughtErrorsIgnorePattern": "^_"
       }
     ],
-    "consistent-return": "off"
+    "consistent-return": "off",
+    "i18next/no-literal-string": "warn"
   },
   "settings": {
     "import/resolver": {

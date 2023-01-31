@@ -1,6 +1,9 @@
-node_modules
+node_modules/
+dist/
+.git/
+public/
+coverage/
+
+# deps
 yarn.lock
 package-lock.json
-dist
-.git
-public
