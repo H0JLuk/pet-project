@@ -1,6 +1,6 @@
 import path from 'path';
 
-import { BuildEnv, BuildPaths, buildWebpackConfig } from './src/shared/config/build';
+import { BuildEnv, BuildPaths, buildWebpackConfig } from './build';
 
 const paths: BuildPaths = {
   build: path.resolve(__dirname, 'dist'),

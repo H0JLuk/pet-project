@@ -4,6 +4,18 @@ import { RuleSetRule } from 'webpack';
 import { BuildOptions } from './types/config';
 
 export function buildLoaders({ isDev }: BuildOptions): RuleSetRule[] {
+  const babelLoader: RuleSetRule = {
+    test: /\.(jsx?|tsx?)/,
+    exclude: /node_modules/,
+    use: {
+      loader: 'babel-loader',
+      options: {
+        presets: ['@babel/preset-env', '@babel/preset-typescript'],
+        plugins: [['i18next-extract', { locale: ['ru', 'en'], keyAsDefaultValue: true }]],
+      },
+    },
+  };
+
   // если не юзаем ts - нужен babel-loader
   const typescriptLoader: RuleSetRule = {
     test: /\.tsx?$/,
@@ -38,5 +50,5 @@ export function buildLoaders({ isDev }: BuildOptions): RuleSetRule[] {
     ],
   };
 
-  return [fileLoader, typescriptLoader, svgLoader, sassLoader];
+  return [babelLoader, typescriptLoader, fileLoader, svgLoader, sassLoader];
 }

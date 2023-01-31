@@ -1,3 +1,4 @@
+import ReactRefreshWebpackPlugin from '@pmmmwh/react-refresh-webpack-plugin';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import { DefinePlugin, ProgressPlugin, WebpackPluginInstance } from 'webpack';
@@ -5,7 +6,7 @@ import { DefinePlugin, ProgressPlugin, WebpackPluginInstance } from 'webpack';
 import { BuildOptions } from './types/config';
 
 export function buildPlugins({ paths, isDev }: BuildOptions): WebpackPluginInstance[] {
-  return [
+  const plugins: WebpackPluginInstance[] = [
     new ProgressPlugin(),
     new HtmlWebpackPlugin({
       template: paths.html,
@@ -18,4 +19,10 @@ export function buildPlugins({ paths, isDev }: BuildOptions): WebpackPluginInsta
       __IS__DEV__: JSON.stringify(isDev),
     }),
   ];
+
+  if (isDev) {
+    // plugins.push(new ReactRefreshWebpackPlugin()); // FIXME:
+  }
+
+  return plugins;
 }
