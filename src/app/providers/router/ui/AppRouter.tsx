@@ -5,13 +5,15 @@ import { routeConfig } from '@/shared/config/routeConfig';
 
 function AppRouter() {
   return (
-    <Suspense fallback={<p>Loading...</p>}>
-      <Routes>
-        {routeConfig.map(routeProps => (
-          <Route {...routeProps} key={routeProps.path} />
-        ))}
-      </Routes>
-    </Suspense>
+    <div className='page-wrapper'>
+      <Suspense fallback={<p>Loading...</p>}>
+        <Routes>
+          {routeConfig.map(routeProps => (
+            <Route {...routeProps} key={routeProps.path} />
+          ))}
+        </Routes>
+      </Suspense>
+    </div>
   );
 }
 

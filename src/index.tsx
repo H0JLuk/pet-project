@@ -1,9 +1,10 @@
 import { createRoot } from 'react-dom/client';
 import { BrowserRouter } from 'react-router-dom';
 
-import App from '@/app/App';
+import '@/shared/config/i18n/i18n';
+import { ThemeProvider } from '@/shared/config/providers/ThemeProvider';
 
-import { ThemeProvider } from './shared/config/providers/ThemeProvider';
+import App from '@/app/App';
 
 const container = document.getElementById('root');
 if (!container) {

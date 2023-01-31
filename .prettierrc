@@ -11,13 +11,13 @@
     "^(react|next)",
     "<THIRD_PARTY_MODULES>",
 
+    "^@/shared",
     "^@/app",
     "^@/processes",
     "^@/pages",
     "^@/widgets",
     "^@/features",
     "^@/entities",
-    "^@/shared",
     "^\\.(\\.)?/\\w+"
   ],
   "importOrderSeparation": true,

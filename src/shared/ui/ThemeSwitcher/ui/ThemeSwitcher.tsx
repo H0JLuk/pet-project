@@ -1,5 +1,6 @@
-import { Theme, useTheme } from '@/shared/config/providers/ThemeProvider';
+import { useTheme } from '@/shared/config/providers/ThemeProvider';
 import { classNames } from '@/shared/lib/classNames';
+import { Button, VariantButton } from '@/shared/ui/Button';
 
 import cls from './ThemeSwitcher.module.scss';
 
@@ -11,8 +12,13 @@ export const ThemeSwitcher = ({ className }: ThemeSwitcherProps) => {
   const { theme, toggleTheme } = useTheme();
 
   return (
-    <button type='button' onClick={toggleTheme} className={classNames(cls.themeSwitcher, {}, [className])}>
+    <Button
+      variant={VariantButton.CLEAR}
+      type='button'
+      onClick={toggleTheme}
+      className={classNames(cls.themeSwitcher, {}, [className])}
+    >
       Switch theme
-    </button>
+    </Button>
   );
 };

@@ -16,6 +16,10 @@ export function buildLoaders({ isDev }: BuildOptions): RuleSetRule[] {
     use: ['@svgr/webpack'],
   };
 
+  const fileLoader: RuleSetRule = {
+    test: /\.(png|jpe?g|gif)$/,
+  };
+
   const sassLoader: RuleSetRule = {
     test: /\.s[ac]ss$/,
     use: [
@@ -26,7 +30,7 @@ export function buildLoaders({ isDev }: BuildOptions): RuleSetRule[] {
         options: {
           modules: {
             auto: /\.module\.s[ac]ss$/i,
-            localIdentName: isDev ? '[path][name]_[local]-[hash:base64:5]' : '[hash:base64:8]',
+            localIdentName: isDev ? '[path][name]_[local]-[hash:base64:5]' : '[hash:base64:7]',
           },
         },
       },
@@ -34,5 +38,5 @@ export function buildLoaders({ isDev }: BuildOptions): RuleSetRule[] {
     ],
   };
 
-  return [typescriptLoader, svgLoader, sassLoader];
+  return [fileLoader, typescriptLoader, svgLoader, sassLoader];
 }
