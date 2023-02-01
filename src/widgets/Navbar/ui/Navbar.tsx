@@ -1,6 +1,6 @@
 import { useTranslation } from 'react-i18next';
 
-import { AppRoutes } from '@/shared/config/routeConfig';
+import { RoutePath } from '@/shared/config/routeConfig';
 import { classNames } from '@/shared/lib/classNames';
 import { AppLink, AppLinkTheme } from '@/shared/ui/AppLink';
 
@@ -16,10 +16,10 @@ export const Navbar = ({ className }: NavbarProps) => {
   return (
     <div className={classNames(cls.navbar, {}, [className])}>
       <div className={cls.links}>
-        <AppLink to={AppRoutes.MAIN} theme={AppLinkTheme.PRIMARY}>
+        <AppLink to={RoutePath.main} theme={AppLinkTheme.PRIMARY}>
           Главная
         </AppLink>
-        <AppLink to={AppRoutes.ABOUT} theme={AppLinkTheme.SECONDARY}>
+        <AppLink to={RoutePath.about} theme={AppLinkTheme.SECONDARY}>
           Пися попа
         </AppLink>
       </div>

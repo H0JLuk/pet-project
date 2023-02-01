@@ -2,6 +2,7 @@
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import { DefinePlugin, ProgressPlugin, WebpackPluginInstance } from 'webpack';
+import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
 
 import { BuildOptions } from './types/config';
 
@@ -19,6 +20,10 @@ export function buildPlugins({ paths, isDev }: BuildOptions): WebpackPluginInsta
       __IS__DEV__: JSON.stringify(isDev),
     }),
   ];
+
+  if (process.env.analyze) {
+    plugins.push(new BundleAnalyzerPlugin());
+  }
 
   if (isDev) {
     // plugins.push(new ReactRefreshWebpackPlugin()); // FIXME:

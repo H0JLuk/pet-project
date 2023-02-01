@@ -3,8 +3,11 @@ import { BrowserRouter } from 'react-router-dom';
 
 import '@/shared/config/i18n/i18n';
 import { ThemeProvider } from '@/shared/config/providers/ThemeProvider';
+import { ErrorBoundary } from '@/shared/ui/ErrorBoundary';
 
 import App from '@/app/App';
+
+import { PageError } from '@/pages/PageError';
 
 const container = document.getElementById('root');
 if (!container) {
@@ -16,8 +19,10 @@ const root = createRoot(container);
 
 root.render(
   <BrowserRouter>
-    <ThemeProvider>
-      <App />
-    </ThemeProvider>
+    <ErrorBoundary fallback={<PageError />}>
+      <ThemeProvider>
+        <App />
+      </ThemeProvider>
+    </ErrorBoundary>
   </BrowserRouter>,
 );

@@ -4,6 +4,7 @@ import { useTheme } from '@/shared/config/providers/ThemeProvider';
 import { classNames } from '@/shared/lib/classNames';
 
 import { Navbar } from '@/widgets/Navbar';
+import { PageLoader } from '@/widgets/PageLoader';
 import { Sidebar } from '@/widgets/Sidebar';
 
 import { AppRouter } from './providers/router';
@@ -11,9 +12,10 @@ import './styles/index.scss';
 
 function App() {
   const { theme } = useTheme();
+
   return (
     <div className={classNames('app', {}, [theme])}>
-      <Suspense fallback='Translations loading...'>
+      <Suspense fallback={<PageLoader />}>
         <Navbar className='чьлен' />
         <div className='content-page'>
           <Sidebar />

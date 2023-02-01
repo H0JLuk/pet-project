@@ -49,7 +49,7 @@
     "import/no-extraneous-dependencies": [
       "error",
       {
-        "devDependencies": ["**/*.stories.*", "**/.storybook/**/*.*", "webpack.config.ts", "build/**/*.*"],
+        "devDependencies": true,
         "peerDependencies": true
       }
     ],
