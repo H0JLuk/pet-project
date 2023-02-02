@@ -15,7 +15,7 @@
     "format": "prettier --write . --config ./.prettierrc && npx stylelint \"**/*.scss\" --fix",
     "lint": "eslint --fix . --ext ts --ext tsx --ext js",
     "format-all": "npm run lint && npm run format",
-    "test": "jest --config ./config/jest/jest.config.ts"
+    "test": "jest --config ./config/jest/jest.config.ts --watch"
   },
   "devDependencies": {
     "@babel/core": "^7.20.12",
@@ -27,7 +27,6 @@
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^14.4.3",
-    "@trivago/prettier-plugin-sort-imports": "^4.0.0",
     "@types/i18next": "^13.0.0",
     "@types/jest": "^29.4.0",
     "@types/node": "^18.11.7",
@@ -62,6 +61,7 @@
     "jest-environment-jsdom": "^29.4.1",
     "mini-css-extract-plugin": "^2.6.1",
     "prettier": "^2.8.3",
+    "regenerator-runtime": "^0.13.11",
     "sass": "^1.55.0",
     "sass-loader": "^13.1.0",
     "style-loader": "^3.3.1",

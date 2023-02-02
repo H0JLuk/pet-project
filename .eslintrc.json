@@ -7,6 +7,7 @@
   "extends": [
     "eslint:recommended",
     "plugin:react/recommended",
+    "plugin:import/recommended",
     "airbnb",
     "prettier",
     "plugin:@typescript-eslint/recommended",
@@ -46,13 +47,7 @@
     "import/prefer-default-export": "off",
     "no-plusplus": "off",
     "arrow-body-style": "off",
-    "import/no-extraneous-dependencies": [
-      "error",
-      {
-        "devDependencies": true,
-        "peerDependencies": true
-      }
-    ],
+    "import/no-extraneous-dependencies": ["off"],
     "react/function-component-definition": "off",
     "jsx-a11y/label-has-for": [
       2,

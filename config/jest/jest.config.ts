@@ -49,12 +49,17 @@ export default {
   moduleNameMapper: {
     '@/(.*)': '<rootDir>src/$1',
     // '\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$':
-    //   '<rootDir>/__mocks__/fileMock.js',
+    '\\.svg$': '<rootDir>__mocks__/fileMock.js',
     '\\.(s?css|less)$': 'identity-obj-proxy',
   },
 
   // A list of paths to modules that run some code to configure or set up the testing framework before each test
-  setupFilesAfterEnv: ['<rootDir>/config/jest/setupTests.ts'],
+  setupFilesAfterEnv: ['<rootDir>config/jest/setupTests.ts'],
+
+  // A set of global variables that need to be available in all test environments
+  globals: {
+    __IS__DEV__: false,
+  },
 
   // Indicates which provider should be used to instrument code for coverage
   // coverageProvider: "babel",
@@ -89,9 +94,6 @@ export default {
 
   // A path to a module which exports an async function that is triggered once after all test suites
   // globalTeardown: undefined,
-
-  // A set of global variables that need to be available in all test environments
-  // globals: {},
 
   // The maximum amount of workers used to run your tests. Can be specified as % or a number. E.g. maxWorkers: 10% will use 10% of your CPU amount + 1 as the maximum worker number. maxWorkers: 2 will use a maximum of 2 workers.
   // maxWorkers: "50%",

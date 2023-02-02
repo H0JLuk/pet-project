@@ -14,11 +14,10 @@ export const RoutePath = {
   [AppRoutes.MAIN]: '/',
   [AppRoutes.ABOUT]: '/help-me-pls',
   [AppRoutes.NOT_FOUND]: '*',
-  // } as const satisfies Record<AppRoutes, string> // FIXME:
-} as const;
+} as const satisfies Record<AppRoutes, string>;
 
-export const routeConfig: RouteProps[] = [
+export const routeConfig = [
   { path: RoutePath.main, element: <MainPage /> },
   { path: RoutePath.about, element: <AboutPage /> },
   { path: RoutePath.not_found, element: <NotFoundPage /> },
-];
+] satisfies RouteProps[];

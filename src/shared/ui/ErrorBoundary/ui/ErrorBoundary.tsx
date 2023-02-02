@@ -16,7 +16,7 @@ class ErrorBoundary extends Component<ErrorBoundaryProps, ErrorBoundaryState> {
   } // Обновить состояние с тем, чтобы следующий рендер показал запасной UI.
 
   // componentDidCatch(error: Error, errorInfo: React.ErrorInfo) {
-  //   console.log(error, errorInfo);
+  //   sentryLogs(error, errorInfo);
   // }
 
   render() {
