@@ -1,7 +1,6 @@
 import { renderWithTranslation } from '@/shared/lib/tests/renderWithTranslation/renderWithTranslation';
-import { render, screen } from '@testing-library/react';
+import { screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
-import { withTranslation } from 'react-i18next';
 
 import { Sidebar, SidebarProps } from './Sidebar';
 
@@ -17,6 +16,7 @@ describe('<Sidebar />', () => {
   test('should be match snapshot', () => {
     renderComponent();
     expect(screen.getByTestId(baseProps.testId)).toBeInTheDocument();
+    screen.debug();
     // expect(screen.debug()).toMatchSnapshot();
   });
 
