@@ -7,8 +7,8 @@ const config: StorybookConfig = {
     '@storybook/addon-essentials',
     '@storybook/addon-interactions',
     'storybook-dark-mode',
-    'storybook-addon-react-router-v6',
     'storybook-react-i18next',
+    'storybook-addon-react-router-v6',
   ],
   framework: '@storybook/react',
   core: {

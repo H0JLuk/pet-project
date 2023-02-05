@@ -20,11 +20,12 @@ export const parameters: Parameters = {
   //   en: 'English',
   //   ru: 'Russian',
   // },
+  reactRouter: {
+    routerPath: '/',
+  },
 };
 
-// export const decorators = [StyleDecorator, ThemeDecorator, withRouter];
-
+addDecorator(withRouter);
 addDecorator(StyleDecorator);
 addDecorator(ThemeDecorator);
 // addDecorator(i18nDecorator);
-addDecorator(withRouter);

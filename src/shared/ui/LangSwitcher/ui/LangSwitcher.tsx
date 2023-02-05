@@ -1,6 +1,6 @@
-import { useTranslation } from 'react-i18next';
+// import { useTranslation } from 'react-i18next';
 
-import i18n from '@/shared/config/i18n/i18n';
+// import i18n from '@/shared/config/i18n/i18n';
 import { classNames } from '@/shared/lib/classNames';
 import { Button, VariantButton } from '@/shared/ui/Button';
 
@@ -9,10 +9,10 @@ export type LangSwitcherProps = {
 };
 
 export const LangSwitcher = ({ className }: LangSwitcherProps) => {
-  const { t } = useTranslation();
+  // const { t } = useTranslation();
 
   const changeLang = async () => {
-    await i18n.changeLanguage(i18n.language === 'ru' ? 'en' : 'ru');
+    // await i18n.changeLanguage(i18n.language === 'ru' ? 'en' : 'ru');
   };
 
   return (
@@ -22,7 +22,8 @@ export const LangSwitcher = ({ className }: LangSwitcherProps) => {
       onClick={changeLang}
       className={classNames('lang', {}, [className])}
     >
-      {t('Перевод')}
+      Перевод
+      {/* {t('Перевод')} */}
     </Button>
   );
 };
