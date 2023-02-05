@@ -16,7 +16,6 @@ describe('<Sidebar />', () => {
   test('should be match snapshot', () => {
     renderComponent();
     expect(screen.getByTestId(baseProps.testId)).toBeInTheDocument();
-    screen.debug();
     // expect(screen.debug()).toMatchSnapshot();
   });
 
