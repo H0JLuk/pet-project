@@ -1,0 +1,47 @@
+name: testing, linting, building
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  pipeline:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [18.x]
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: Starting Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node-version }}
+      - name: install modules
+        run: npm i
+      - name: build project
+        run: npm run build:prod
+      - name: linting, formatting
+        run: npm run format-all
+      - name: unit testing
+        run: npm run test:unit
+
+  # deploy:
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - uses: actions/checkout@v3
+  #     - name: Setup SSH
+  #       run: |
+  #         mkdir -p ~/.ssh
+  #         echo "$SSH_PRIVATE_KEY" > ~/.ssh/id_rsa
+  #         chmod 700 ~/.ssh
+  #         chmod 600 ~/.ssh/id_rsa
+  #         echo "$SSH_KNOWN_HOSTS" >> ~/.ssh/known_hosts
+  #       env:
+  #         SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+  #         SSH_KNOWN_HOSTS: ${{ secrets.SSH_KNOWN_HOSTS }}
+  #     - name: Restart the application
+  #       run: |
+  #         ssh -p 22 zolkinka@92.53.97.252 "pushd /var/www/gour/gour-store-front && git fetch origin && git reset --hard origin/dev && git pull && docker compose up --detach --build -d store-front"
