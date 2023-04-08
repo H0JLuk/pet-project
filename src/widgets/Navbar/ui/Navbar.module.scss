@@ -2,12 +2,7 @@
   width: 100%;
   height: var(--navbar-height);
   display: flex;
+  flex-direction: row-reverse;
   align-items: center;
   padding: 20px;
-}
-
-.links {
-  margin-left: auto;
-  display: flex;
-  gap: 15px;
 }

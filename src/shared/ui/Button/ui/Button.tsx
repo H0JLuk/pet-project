@@ -6,8 +6,10 @@ import cls from './Button.module.scss';
 
 export enum VariantButton {
   CLEAR = 'clear',
-  PRIMARY = 'primary',
+  CLEAR_INVERTED = 'clearInverted',
   OUTLINE = 'outline',
+  PRIMARY = 'primary',
+  PRIMARY_INVERTED = 'primaryInverted',
 }
 
 export type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {

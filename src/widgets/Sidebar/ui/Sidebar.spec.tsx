@@ -4,7 +4,7 @@ import userEvent from '@testing-library/user-event';
 
 import { Sidebar, SidebarProps } from './Sidebar';
 
-const baseProps = { testId: 'sidebar-test-id' } satisfies SidebarProps;
+const baseProps = { testId: 'sidebar-testid' } satisfies SidebarProps;
 
 const renderComponent = (props: SidebarProps = {}) => {
   const mergedProps: SidebarProps = { ...baseProps, ...props };
@@ -30,5 +30,12 @@ describe('<Sidebar />', () => {
 
     await userEvent.click(toggleBtn);
     expect(screen.getByTestId(baseProps.testId)).not.toHaveClass('collapsed');
+  });
+
+  test('should be render with default testId', () => {
+    const defaultTestId = 'sidebar';
+    renderComponent({ testId: undefined });
+
+    expect(screen.getByTestId(defaultTestId)).toBeInTheDocument();
   });
 });
