@@ -5,6 +5,7 @@
   transition: 0.3s opacity;
   pointer-events: none;
   opacity: 0;
+  color: var(--primary-color);
 }
 
 .overlay {
@@ -31,10 +32,6 @@
 .opened {
   opacity: 1;
   pointer-events: all;
-
-  :root body {
-    overflow: hidden;
-  }
 
   .content {
     transform: scale(1);

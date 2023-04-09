@@ -10,6 +10,8 @@ import App from '@/app/App';
 import { PageError } from '@/pages/PageError';
 import { StoreProvider } from './app/providers/store';
 
+import './app/styles/index.scss';
+
 const container = document.getElementById('root');
 if (!container) {
   document.body.innerHTML =

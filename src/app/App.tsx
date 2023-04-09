@@ -1,6 +1,5 @@
 import { Suspense } from 'react';
 
-import { useTheme } from '@/shared/config/providers/ThemeProvider';
 import { classNames } from '@/shared/lib/classNames';
 
 import { PageLoader } from '@/widgets/PageLoader';
@@ -11,10 +10,8 @@ import './styles/index.scss';
 import { Navbar } from '@/widgets/Navbar';
 
 function App() {
-  const { theme } = useTheme();
-
   return (
-    <div className={classNames('app', {}, [theme])}>
+    <div className={classNames('app')}>
       <Suspense fallback={<PageLoader />}>
         <Navbar />
         <div className='content-page'>

@@ -1,4 +1,5 @@
 /* eslint-disable jsx-a11y/no-static-element-interactions, jsx-a11y/click-events-have-key-events */
+import { useTheme } from '@/shared/config/providers/ThemeProvider';
 import { classNames, type CnMods } from '@/shared/lib/classNames';
 import { memo, MouseEventHandler } from 'react';
 import { Portal } from '../../Portal';
@@ -11,6 +12,8 @@ export type ModalProps = React.PropsWithChildren<{
 }>;
 
 export const Modal = memo(({ className, isOpen = false, onClose, children }: ModalProps) => {
+  const { theme } = useTheme();
+
   const mods: CnMods = {
     [cls.opened]: isOpen,
   };
