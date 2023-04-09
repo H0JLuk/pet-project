@@ -8,6 +8,7 @@ import { ErrorBoundary } from '@/shared/ui/ErrorBoundary';
 import App from '@/app/App';
 
 import { PageError } from '@/pages/PageError';
+import { StoreProvider } from './app/providers/store';
 
 const container = document.getElementById('root');
 if (!container) {
@@ -18,11 +19,13 @@ if (!container) {
 const root = createRoot(container);
 
 root.render(
-  <BrowserRouter>
-    <ErrorBoundary fallback={<PageError />}>
-      <ThemeProvider>
-        <App />
-      </ThemeProvider>
-    </ErrorBoundary>
-  </BrowserRouter>,
+  <StoreProvider initialState={{ counter: { value: 0 } }}>
+    <BrowserRouter>
+      <ErrorBoundary fallback={<PageError />}>
+        <ThemeProvider>
+          <App />
+        </ThemeProvider>
+      </ErrorBoundary>
+    </BrowserRouter>
+  </StoreProvider>,
 );

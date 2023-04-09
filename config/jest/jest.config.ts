@@ -58,7 +58,7 @@ export default {
 
   // A set of global variables that need to be available in all test environments
   globals: {
-    __IS__DEV__: false,
+    __IS__DEV__: true,
   },
 
   // Indicates which provider should be used to instrument code for coverage

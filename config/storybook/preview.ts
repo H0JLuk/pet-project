@@ -1,5 +1,8 @@
 import { StyleDecorator } from './StyleDecorator/StyleDecorator';
 import { addDecorator, Parameters } from '@storybook/react';
+// FIXME: problem with "@types" package
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-ignore
 import { withRouter } from 'storybook-addon-react-router-v6';
 
 import { ThemeDecorator } from './ThemeDecorator/ThemeDecorator';
