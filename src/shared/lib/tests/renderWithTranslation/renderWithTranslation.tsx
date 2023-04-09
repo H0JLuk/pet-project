@@ -11,7 +11,7 @@ export interface componentRenderOptions {
   initialState?: DeepPartial<StateSchema>;
 }
 
-export function renderWithTranslation(component: ReactNode, options: componentRenderOptions) {
+export function renderWithTranslation(component: ReactNode, options: componentRenderOptions = {}) {
   const { initialState } = options;
 
   return render(
