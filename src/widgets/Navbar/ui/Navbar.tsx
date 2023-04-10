@@ -4,8 +4,9 @@ import { useTranslation } from 'react-i18next';
 import { Button, VariantButton } from '@/shared/ui/Button';
 import { classNames } from '@/shared/lib/classNames';
 
+import { LoginModal } from '@/features/AuthByUsername';
+
 import cls from './Navbar.module.scss';
-import { Modal } from '@/shared/ui/Modal/ui/Modal';
 
 export type NavbarProps = {
   className?: string;
@@ -24,9 +25,7 @@ export const Navbar = ({ className }: NavbarProps) => {
       <Button onClick={toggleModal} variant={VariantButton.CLEAR_INVERTED}>
         Log in
       </Button>
-      <Modal isOpen={isAuthModalOpen} onClose={toggleModal}>
-        Log in
-      </Modal>
+      <LoginModal isOpen={isAuthModalOpen} onClose={toggleModal} />
     </div>
   );
 };

@@ -1,7 +1,5 @@
-export type CounterState = {
-  value: number;
-};
+import { UserSchema } from '@/entities/user';
 
 export type StateSchema = {
-  counter: CounterState;
+  user: UserSchema;
 };
