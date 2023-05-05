@@ -21,7 +21,7 @@ if (!container) {
 const root = createRoot(container);
 
 root.render(
-  <StoreProvider initialState={{ user: {} }}>
+  <StoreProvider>
     <BrowserRouter>
       <ErrorBoundary fallback={<PageError />}>
         <ThemeProvider>
